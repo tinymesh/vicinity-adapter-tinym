@@ -163,10 +163,10 @@ public class ObjectsApiController {
      *
      * @param oid a unique object id used to address a specific object
      * @param pid a unique property id used to address a specific property
-     * @return The endpoint returns state from database, which represents the last received value from TinyMesh Cloud
-     * HTTP.404 if the device does not exist OR
-     * HTTP.404 if the {@param pid} does not match any properties defined in the thing description (T332)
-     * HTTP.200 if a matching uuid and property is found
+     * @return The endpoint returns state from database, which represents the last received value from TinyMesh Cloud.
+     * HTTP.404 if the device does not exist.
+     * HTTP.404 if the pid does not match any properties defined in the thing description (T332).
+     * HTTP.200 if a matching uuid and property is found.
      * @see ResponseEntity
      * @see Device
      */
@@ -203,7 +203,6 @@ public class ObjectsApiController {
 
         return new ResponseEntity<>(jsonBody, responseHeaders, status);
     }
-
 
     @RequestMapping(value = "/objects/{oid}/properties/{pid}", method = RequestMethod.PUT, produces = "application/json", consumes = "application/json")
     public ResponseEntity<PropertyValue> setObjectProperty(@PathVariable UUID oid, @PathVariable String pid, @RequestBody SetPropertyValue body) {
